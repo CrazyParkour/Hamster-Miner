@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homyak bot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #000000; 
+            color: #ffffff; 
+            font-family: Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 20px;
+            text-align: center; /* Центрируем содержимое */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            display: flex; 
+            align-items: center; 
+            justify-content: center; /* Выравниваем содержимое по центру */
+        }
+
+        #coinCount {
+            font-size: 24px; 
+            margin-right: 10px; /* Добавляем отступ справа от "Coins" */
+        }
+
+        .image-button {
+            cursor: pointer; 
+            border: none; 
+            background: none; 
+            padding: 0; 
+            max-width: 50%; /* Ширина изображения */
+            height: auto; /* Автоматическая высота */
+            transition: filter 0.3s ease; /* Анимация изменения яркости */
+        }
+
+        .image-button:active {
+            filter: brightness(80%); /* Уменьшаем яркость при клике */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>  HOMA MINER</h1>
+        <p><span id="coinCount">0</span> homacoins</p>
+        <img src="homa.jpg" alt="Homa" class="image-button" onclick="mineCoins()">
+    </div>
+    
+    <script>
+        var coinCount = 0;
+
+        function mineCoins() {
+            coinCount++;
+            document.getElementById("coinCount").innerText = coinCount;
+        }
+    </script>
+</body>
+</html>
